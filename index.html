@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Automation Inc. | Supply Chain & WMS Consulting</title>
+    <style>
+        :root {
+            --primary-dark: #0A192F; /* Deep Navy Base */
+            --teal-bright: #00B4D8; /* Vibrant Teal Accent */
+            --blue-mid: #0077B6;    /* Deep Sea Blue */
+            --teal-light: #90E0EF;   /* Soft Teal Highlight */
+            --text-dark: #1E293B;
+            --text-light: #F8FAFC;
+            --bg-light: #F4F7F9;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #FFFFFF;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary-dark);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--blue-mid);
+        }
+
+        .logo {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Logo Gradient Text */
+        .logo span {
+            background: linear-gradient(135deg, var(--teal-bright) 0%, var(--blue-mid) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal-bright);
+        }
+
+        /* Hero Section with Teal/Blue Gradient */
+        .hero {
+            background: linear-gradient(135deg, #023E8A 0%, #0077B6 40%, #0096C7 70%, #03045E 80%);
+            color: var(--text-light);
+            padding: 8rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--teal-light);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem auto;
+            color: #E2E8F0;
+        }
+
+        /* Gradient Button */
+        .cta-btn {
+            background: linear-gradient(135deg, var(--teal-bright) 0%, var(--blue-mid) 100%);
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.3s;
+            display: inline-block;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+        }
+
+        /* Core Pillars Section */
+        .pillars {
+            padding: 5rem 5%;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal-bright), var(--blue-mid));
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Gradient top borders for cards */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background: linear-gradient(90deg, var(--teal-bright), var(--blue-mid));
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* Lead Capture Section */
+        .contact-section {
+            padding: 5rem 5%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal-bright);
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--blue-mid) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            border-top: 1px solid #1E293B;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+	<div class="logo">
+	 <img src="logo.png" alt="Description" style="width: 1700px;">
+	</div>
+	
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about"></a></li>
+            <li><a href="#contact"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Accelerate Your Supply Chain with <span>Engineered Precision</span></h1>
+        <p>We consult, design, and implement next-generation WMS and industrial automation systems to eliminate bottlenecks and maximize throughput.</p>
+        <a href="#contact" class="cta-btn">Optimize Your Operation</a>
+    </section>
+
+    <!-- Core Pillars Section -->
+    <section class="pillars" id="services">
+        <h2 class="section-title">Our Core Capabilities</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🚚</div>
+                <h3>Supply Chain Consulting</h3>
+                <p>Strategic network design, operational audits, and process re-engineering to scale your capacity.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3>WMS Integration</h3>
+                <p>End-to-end evaluation, tier-1 software configuration, and deployment tailored to your facility flows.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Automation & Robotics</h3>
+                <p>Turnkey implementation of AS/RS, AMRs, and hardware controls maximizing floor ROI.</p>
+            </div>
+        </div>
+    </section>
+
